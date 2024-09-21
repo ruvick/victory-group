@@ -1,14 +1,25 @@
 //<BUTTONS (a.btn+tab)>
 // Снипет (HTML): btn
 
-.button {
+.btn {
 	display: inline-flex;
-	padding: 0px 0px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: rem(10) rem(20);
+	font-size: rem(14);
+	font-weight: 700;
+	line-height: math.div(20, 14);
+	color: #fff;
+	background: $bluColor;
+	border-radius: rem(16);
+	transition: $mainTransition;
+	&.fw {
+		width: 100%;
+	}
 	@media (any-hover: hover) {
 		&:hover {
+			opacity: 0.7;
 		}
-	}
-	&._fw {
-		width: 100%;
 	}
 }
