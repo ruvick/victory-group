@@ -1,10 +1,61 @@
 //====================================================================================================
+.header {
+	background-color: #fff;
+	&__wrapper {
+	}
+
+	&__top {
+		@media (max-width: em(991)){
+			  display: none;
+		}
+	}
+}
+
+.top-header {
+	padding: rem(6) 0;
+	background-color: $mainColor;
+	&__container {
+	}
+
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: rem(4);
+		font-size: rem(14);
+		font-weight: 400;
+		line-height: math.div(20, 14);
+		color: $darkGrey;
+		transition: $mainTransition;
+		&:not(:last-child){
+			margin-right: rem(10);
+		}
+		svg {
+			width: rem(16);
+			flex: 0 0 rem(16);
+			height: rem(16);
+		}
+	}
+	a {
+		transition: $mainTransition;
+		@media (any-hover: hover){
+			&:hover { 
+			 color: #646970;
+		 } 
+	 }
+	}
+}
 
 //====================================================================================================
 
 // Анимация header scroll
 .header {
-	@media (min-width: 1025px) {
+	@media (min-width: 1025px) { 
 		transform: translateY(0);
 		position: fixed;
 		top: 0;
