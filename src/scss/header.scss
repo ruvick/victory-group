@@ -67,14 +67,19 @@
 		flex-wrap: wrap;
 		gap: rem(6);
 		@media (max-width: em(991)){
-			  justify-content: space-between;
 				align-items: center;
+				flex-wrap: nowrap;
 		}
 	}
 
 	&__logo {
 		&:not(:last-child){
 			margin-right: rem(10);
+		}
+		@media (max-width: em(991)){
+			flex: 1 1 auto;
+			display: flex;
+			justify-content: center; 
 		}
 	}
 
@@ -88,25 +93,52 @@
 			background-color: #fff;
 			height: 100%;
 			padding: rem(25) rem(10);
+			background-color: $lightGrey;
 			transition: $mainTransition;
 			transform: translateX(-100%);
 			visibility: hidden;
+			.menu-open & {
+				transform: translateX(0%);
+				visibility: visible;
+			}
 		}
 	}
 
 	&__actions {
 		flex: 1 1 auto;
 	}
+
+	&__phone-mob {
+		display: none;
+		width: rem(24);
+		flex: 0 0 rem(24);
+		height: rem(24);
+		svg {
+			flex: 0 1 100%;
+			width: 100%;
+			height: 100%;
+		}
+		@media (max-width: em(991)){
+			  display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+		}
+	}
 }
 
 .logo {
-	flex: 0 0 rem(161);
+	width: rem(161);
 	// @include adaptiveValue("width", 161, 30);
 	height: auto;
+	max-height: rem(40);
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+		@media (max-width: em(991)){
+			 height: auto; 
+		}
 	}
 }
 
@@ -140,7 +172,9 @@
 	}
 
 	li {
-
+		@media (max-width: em(991)){
+			  width: 100%;
+		}
 	}
 
 	a {
@@ -152,7 +186,7 @@
 		line-height: math.div(24, 16);
 		text-align: center;
 		color: $mainColor;
-		padding: 3px;
+		padding: rem(3);
 		white-space: nowrap;
 		transition: $mainTransition;
 		@media (min-width:em(992)){
@@ -170,6 +204,10 @@
 			&:hover { 
 				border: rem(1) solid #2E58DB;
 		 } 
+	 }
+	 @media (max-width: em(991)){
+		  width: 100%;
+			justify-content: start;
 	 }
 	}
 }
@@ -268,7 +306,7 @@
 //========================================================================================================================================================
 // Анимация header scroll
 .header {
-	@media (min-width: 1025px) { 
+	@media (min-width: em(1025)){
 		transform: translateY(0);
 		position: fixed;
 		top: 0;
@@ -303,29 +341,32 @@
 	@media (max-width: em(991)) {
 		display: block;
 		position: relative;
-		width: 30px;
-		height: 18px;
+		width: rem(18);
+		height: rem(12);
 		cursor: pointer;
 		z-index: 5;
 		span,
 		&::before,
 		&::after {
 			content: "";
-			transition: all 0.3s ease 0s;
-			left: 0px;
+			transition: $mainTransition;
+			left: 0;
 			position: absolute;
 			width: 100%;
-			height: 2px;
-			background-color: #000;
+			height: rem(1);
+			background-color: #2E58DB;
 		}
 		&::before {
-			top: 0px;
+			top: 0;
 		}
 		&::after {
-			bottom: 0px;
+			width: 80%;
+			bottom: 0;
+			right: 0;
+      left: auto;
 		}
 		span {
-			top: calc(50% - 1px);
+			top: calc(50% - rem(1));
 		}
 		.menu-open & {
 			span {
@@ -333,11 +374,12 @@
 			}
 			&::before {
 				transform: rotate(-45deg);
-				top: calc(50% - 1px);
+				top: calc(50% - rem(0));
 			}
 			&::after {
 				transform: rotate(45deg);
-				bottom: calc(50% - 1px);
+				bottom: calc(50% - rem(1));
+				width: 100%;
 			}
 		}
 	}
