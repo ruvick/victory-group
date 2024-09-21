@@ -22,11 +22,65 @@
 
 		<div class="header__main main-header">
 			<div class="main-header__container">
-				<div class="main-header__logo">
-					<a href="index.html">
-						<img src="img/logo.svg" alt="logo">
+
+				<div class="main-header__inner">
+
+					<button type="button" class="icon-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+
+					<a href="index.html" class="main-header__logo logo">
+						<img src="img/icons/logo.svg" alt="logo">
 					</a>
+
+					<nav class="main-header__menu menu">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="index.html" class="menu__link">Главная</a>
+							</li>
+							<li class="menu__item">
+								<a href="catalog.html" class="menu__link">Каталог</a>
+							</li>
+							<li class="menu__item">
+								<a href="contacts.html" class="menu__link">Автокредит</a>
+							</li>
+							<li class="menu__item">
+								<a href="contacts.html" class="menu__link">Trade-in</a>
+							</li>
+							<li class="menu__item">
+								<a href="contacts.html" class="menu__link">Выкуп</a>
+							</li>
+							<li class="menu__item">
+								<a href="contacts.html" class="menu__link">Акции</a>
+							</li>
+							<li class="menu__item">
+								<a href="contacts.html" class="menu__link">Контакты</a>
+							</li>
+						</ul>
+					</nav>
+
+					<div class="main-header__actions actions-header">
+						<div class="actions-header__search-form search-form">
+							<form action="#" class="search-form__item">
+								<!-- <button id="searchMobClose" type="reset" class="search-form__btn search-form__btn_mob-reset _icon-arrow-sl-left"></button>
+								<button id="searchClose" type="reset" class="search-form__btn search-form__btn_reset _icon-close"></button> -->
+								<button type="submit" class="search-form__btn _icon-search">
+									<!-- <svg>
+										<use xlink:href="img/sprite.svg#search"></use>
+									</svg> -->
+								</button>
+								<input id="search" autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+									placeholder="Поиск по марке" data-value="Поиск по марке" class="search-form__input"
+									data-placeholder="Поиск по марке">
+							</form>
+						</div>
+						<button type="button" class="actions-header__btn btn">Связаться</button>
+					</div>
+
 				</div>
+
 			</div>
 		</div>
 
