@@ -22,27 +22,31 @@
 	.breadcrumbs__item {
 		display: flex;
 		align-items: center;
-		&::after{
-			content:''; 
-			width: 10px;
-			height: 1px;
-			margin: 0 10px;
-			background: rgba(2, 0, 32, 0.5);
-			opacity: 0.7;
+		&::before {
+			@include adaptiveValue("font-size", 20, 14);
+			@include adaptiveValue("margin-left", 16, 8);
+			@include adaptiveValue("margin-right", 16, 8);
 		}
-		&:last-child{
-			&::after {
-				display: none;
-			}
-		}
+		// &::after{
+		// 	content:''; 
+		// 	width: 10px;
+		// 	height: 1px;
+		// 	margin: 0 10px;
+		// 	background: rgba(2, 0, 32, 0.5);
+		// 	opacity: 0.7;
+		// }
+		// &:last-child{
+		// 	&::after {
+		// 		display: none;
+		// 	}
+		// }
 	}
 
 	.breadcrumbs__link {
-		font-size: 14px;
+		@include adaptiveValue("font-size", 14, 10);
 		font-weight: 400;
-		line-height: 18px;
-		letter-spacing: 0em;
-		color: rgba(2, 0, 32, 0.5);
+		line-height: math.div(20, 14);
+		color: #646970;
 		text-decoration: none;
 		white-space: nowrap;
 		// margin: 0 5px;
@@ -51,28 +55,20 @@
 		&:first-child {
 			margin-left: 0;
 		}
-
-		&:hover {
-			color: #221F20;
-		}
-		@media (max-width: 480px){
-			font-size: 12px;
-			line-height: 16px;
+		@media (any-hover: hover){
+			 &:hover { 
+			  color: $mainColor;
+			} 
 		}
 	}
 
 	.breadcrumbs__current {
-		font-size: 14px;
+		@include adaptiveValue("font-size", 14, 10);
 		font-weight: 400;
-		line-height: 18px;
-		letter-spacing: 0em;
+		line-height: math.div(20, 14);
 		color: $mainColor;
 		// margin-left: 5px;
 		white-space: nowrap;
-		@media (max-width: 480px){
-			font-size: 12px;
-			line-height: 16px;
-		}
 	}
 }
 //========================================================================================================================================================

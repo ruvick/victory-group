@@ -148,4 +148,13 @@ body {
 
 // Подключение стилей отдельных страниц
 @import "home";
+@import "detail";
+//========================================================================================================================================================
 
+.page__header {
+	@include adaptiveValue("padding-top", 14, 10);
+	@include adaptiveValue("padding-bottom", 14, 10);
+	.page_detail &{
+		background-color: #F3F6FB;
+	}
+}
