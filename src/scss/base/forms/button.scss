@@ -17,6 +17,11 @@
 	&.fw {
 		width: 100%;
 	}
+	&_white {
+		color: $mainColor;
+		background-color: inherit;
+		border: rem(1) solid $mainColor;
+	}
 	@media (any-hover: hover) {
 		&:hover {
 			opacity: 0.7;
