@@ -25,7 +25,6 @@
 	}
 }
 .slider-product {
-	background-color: #fff;
 	border-radius: rem(16);
 	overflow: hidden;
 	&__wrapper {
@@ -39,6 +38,7 @@
 	position: relative;
 	padding: rem(16);
 	padding-bottom: 68.3%;
+	border-radius: rem(16);
 	overflow: hidden;
 	&__sticker {
 		position: absolute;

@@ -45,6 +45,68 @@ function initSliders() {
 	bildSliders();
 
 	// Перечень слайдеров
+	if (document.querySelector('.slider-product')) {
+		new Swiper('.slider-product', {
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation, Pagination],
+			/*
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			// slidesPerView: 'auto', // Чтобы слайдер сам не указывал ширину слайдам. Будем управлять в стилях.
+			// spaceBetween: 12,
+			autoHeight: true,
+			speed: 1000,
+			// parallax: true,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			//loop: true,
+			//preloadImages: false,
+			//lazy: true,
+			// Dotts
+			//pagination: {
+			//	el: '.slider-quality__pagging',
+			//	clickable: true,
+			//},
+			// Arrows
+			// navigation: {
+			// 	nextEl: '.comparison__arrow-prev',
+			// 	prevEl: '.comparison__arrow-next',
+			// },
+			/*
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+			on: {
+
+			}
+		});
+	}
+
 	if (document.querySelector('.comparison__slider')) {
 		new Swiper('.comparison__slider', {
 			// Подключаем модули слайдера
