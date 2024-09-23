@@ -523,8 +523,11 @@
 	}
 
 	&__row {
-		display: flex;
-		justify-content: space-between;
+		// display: flex;
+		// justify-content: space-between;
+		// align-items: center;
+		display: grid; 
+		grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr)); 
 		align-items: center;
 		gap: rem(5);
 	}
@@ -579,6 +582,66 @@
 		flex: 0 0 rem(24);
 		width: rem(24);
 		height: rem(24);
+	}
+}
+//========================================================================================================================================================
+
+.actions-calculation {
+
+	&__filter {
+	}
+}
+.filter-calculation {
+
+	&__header {
+		padding: rem(10) rem(16);
+		background-color: #fff;
+		border-radius: rem(12) rem(12) 0 0;
+	}
+
+	&__title {
+		font-size: rem(14);
+		font-weight: 400;
+		line-height: math.div(20, 14);
+		color: #646970;
+		&:not(:last-child){
+			margin-bottom: rem(5);
+		}
+	}
+
+	&__price {
+		display: flex;
+		align-items: center;
+		gap: rem(3);
+		font-size: rem(16);
+		font-weight: 700;
+		line-height: math.div(24, 16);
+		color: $mainColor;
+		input {
+			font-size: rem(16);
+			font-weight: 700;
+			line-height: math.div(24, 16);
+			color: $mainColor;
+			field-sizing: content;
+		}
+	}
+
+	&__body {
+	}
+
+	&__slider {
+	}
+
+	&__footer {
+	}
+}
+.footer-filter-calculation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: rem(10);
+	padding: rem(10) 0;
+	&__item {
 	}
 }
 

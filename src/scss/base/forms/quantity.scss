@@ -1,15 +1,20 @@
 //<QUANTITY>
 // Снипет (HTML): qa
 .quantity {
-	width: 88px;
-	height: 40px;
+	// width: 88px;
+	width: 85%;
+	height: 100%;
 	display: flex;
-	border: 1px solid rgba(166, 166, 166, 0.45);
+	align-items: center;
 	// .quantity__button
 	&__button {
-		flex: 0 0 30px;
+		width: rem(24);
+		flex: 0 0 rem(24);
+		height: rem(24);
 		position: relative;
 		cursor: pointer;
+		border-radius: 50%;
+		border: rem(1) solid #9CA5B3;
 		&::before,
 		&::after {
 			content: "";
@@ -17,10 +22,10 @@
 			top: 50%;
 			left: 50%;
 			transition: all 0.3s ease 0s;
-			margin: 0px 0px 0px -4.5px;
+			margin: 0px 0px 0px rem(-4.5);
 			background-color: #a6a6a6;
-			width: 9px;
-			height: 1px;
+			width: rem(9);
+			height: rem(1);
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -42,13 +47,25 @@
 	}
 	// .quantity__input
 	&__input {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(5);
 		flex: 1 1 auto;
+		@include adaptiveValue("font-size", 24, 16);
+		font-weight: 700;
+		line-height: math.div(32, 16);
+		color: $bluColor;
 		input {
-			height: 100%;
-			color: #a6a6a6;
-			font-size: 12px;
-			width: 100%;
+			@include adaptiveValue("font-size", 24, 16);
+			font-weight: 700;
+			line-height: math.div(32, 16);
 			text-align: center;
+			height: 100%;
+			color: $bluColor;
+			text-align: center;
+			field-sizing: content;
+			margin-top: rem(-1.5);
 		}
 	}
 }
