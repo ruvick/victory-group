@@ -24,17 +24,17 @@
 	position: relative;
 	._spoller-init & {
 		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
+		// &::before,
+		// &::after {
+		// 	content: "";
+		// 	position: absolute;
+		// 	right: 10px;
+		// 	top: 50%;
+		// 	background-color: #000;
+		// 	height: 2px;
+		// 	width: 15px;
+		// 	transition: transform 0.5s ease 0s;
+		// }
 		&::before {
 			transform: translate(-75%, -50%) rotate(40deg);
 		}
