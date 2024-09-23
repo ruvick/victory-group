@@ -1,5 +1,17 @@
 // Заголовки, общие БЄМ блоки и проче...
 
+.title {
+	@include adaptiveValue("font-size", 36, 22);
+	font-weight: 700;
+	line-height: math.div(44, 36);
+	text-align: center;
+	color: $mainColor;
+	span {
+		color: #9CA5B3;
+	}
+}
+//========================================================================================================================================================
+
 // Свойсьво Blur 
 .backdrop-filter {
 	background: rgba(255, 255, 255, 0.9);
@@ -118,3 +130,24 @@ input[type='checkbox']:checked+.switch-block__label {
 	left: -9999px;
 }
 //</SWITCH>====================================================================================================
+
+.slider-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: rem(32);
+	height: rem(32);
+	border-radius: 50%;
+	border: rem(1) solid #9CA5B3;
+	overflow: hidden;
+	svg {
+		flex: 0 0 rem(24);
+		width: rem(24);
+		height: rem(24);
+	}
+}
+//========================================================================================================================================================
