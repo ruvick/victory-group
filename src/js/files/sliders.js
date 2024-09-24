@@ -46,65 +46,38 @@ function initSliders() {
 
 	// Перечень слайдеров
 	if (document.querySelector('.slider-product')) {
-		new Swiper('.slider-product', {
-			// Подключаем модули слайдера
-			// для конкретного случая
+		const swiper = new Swiper('.slider-product', {
 			modules: [Navigation, Pagination],
-			/*
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			// slidesPerView: 'auto', // Чтобы слайдер сам не указывал ширину слайдам. Будем управлять в стилях.
-			// spaceBetween: 12,
 			autoHeight: true,
 			speed: 1000,
-			// parallax: true,
-			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
-			// Dotts
-			//pagination: {
-			//	el: '.slider-quality__pagging',
-			//	clickable: true,
-			//},
-			// Arrows
-			// navigation: {
-			// 	nextEl: '.comparison__arrow-prev',
-			// 	prevEl: '.comparison__arrow-next',
-			// },
-			/*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
 			on: {
-
+				slideChange: function() {
+					// Обновляем состояние кнопок при смене слайда
+					updateRadioButtons(this.activeIndex);
+				}
 			}
 		});
+	
+		const radioButtons = document.querySelectorAll('.control-btn__input');
+	
+		// Обработчик клика на кнопки
+		radioButtons.forEach((button, index) => {
+			button.addEventListener('change', () => {
+				if (button.checked) {
+					swiper.slideTo(index); // Переключаем слайд при выборе кнопки
+				}
+			});
+		});
+	
+		// Функция для обновления состояния кнопок
+		function updateRadioButtons(activeIndex) {
+			radioButtons.forEach((button, index) => {
+				button.checked = index === activeIndex; // Устанавливаем checked для активного слайда
+			});
+		}
 	}
 
 	if (document.querySelector('.comparison__slider')) {
