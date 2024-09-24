@@ -20,8 +20,9 @@ toggles.forEach(toggle => {
 
 const toggleInputs = document.querySelectorAll('.switch-block__input');
 const benefitPriceElement = document.querySelector('.benefit-product__price');
-const totalPriceElement = document.querySelector('.result-product__total'); // Получаем элемент с общей ценой
-const startPriceElement = document.querySelector('.result-product__start'); // Получаем элемент, куда будем записывать итоговую цену
+const totalPriceElement = document.querySelector('.result-product__total'); 
+const startPriceElement = document.querySelector('.result-product__start'); 
+const saleBlock = document.querySelector('.result-product__sale'); 
 
 // Функция для обновления цены выгоды
 function updateBenefitPrice() {
@@ -49,18 +50,31 @@ function updateStartPrice() {
     // Вычисляем итоговую цену
     const finalPrice = totalPrice - benefitPrice;
 
-    // Обновляем значение в блоке result-product__start
-    startPriceElement.textContent = `от ${finalPrice.toLocaleString('ru-RU')} ₽`;
+    // Проверяем, что finalPrice является числом и не отрицательным
+    if (!isNaN(finalPrice) && finalPrice >= 0) {
+        // Обновляем значение в блоке result-product__start
+        startPriceElement.textContent = `от ${finalPrice.toLocaleString('ru-RU')} ₽`;
+    } else {
+        startPriceElement.textContent = 'Цена недоступна'; // Или любое другое сообщение об ошибке
+    }
+}
+
+// Функция для обновления состояния saleBlock
+function updateSaleBlock() {
+  const creditToggle = document.querySelector('input[name="credit-toggle"]'); 
+  saleBlock.classList.toggle('_active', creditToggle.checked);
 }
 
 // Обработчик событий для переключателей
 toggleInputs.forEach(toggle => {
   toggle.addEventListener('change', () => {
-      updateBenefitPrice(); // Обновляем цену со скидкой
-      updateStartPrice(); // Обновляем итоговую цену
+      updateBenefitPrice(); 
+      updateStartPrice(); 
+      updateSaleBlock(); 
   });
 });
 
-// Также вызываем функции при инициализации
+// Вызываем функции при инициализации
 updateBenefitPrice();
 updateStartPrice();
+updateSaleBlock();

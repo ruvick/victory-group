@@ -315,6 +315,13 @@
 	}
 
 	&__sale {
+		opacity: 0;
+		visibility: hidden;
+		transition: $mainTransition;
+		&._active{
+			opacity: 1;
+			visibility: visible;
+		}
 	}
 
 	&__total {
