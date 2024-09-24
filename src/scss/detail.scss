@@ -772,8 +772,13 @@
 		background-color: $mainColor;
 		border-radius: 50%;
 		overflow: hidden;
+		svg {
+			flex: 0 0 rem(14);
+			width: rem(14);
+			height: rem(14);
+		}
 		&._icon-minus {
-			align-items: flex-end;
+			// align-items: flex-end;
 			opacity: 0.5;
 		}
 	}
