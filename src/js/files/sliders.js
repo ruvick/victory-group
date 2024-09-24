@@ -80,67 +80,46 @@ function initSliders() {
 		}
 	}
 
-	if (document.querySelector('.comparison__slider')) {
-		new Swiper('.comparison__slider', {
-			// Подключаем модули слайдера
-			// для конкретного случая
+	const comparisonSlider = document.querySelector('.comparison__slider');
+	const itemEquipmentSliders = document.querySelectorAll('.item-equipment__slider');
+	
+	if (comparisonSlider) {
+		const swiperComparison = new Swiper(comparisonSlider, {
 			modules: [Navigation, Pagination],
-			/*
-			effect: 'fade',
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			*/
-			observer: true,
-			observeParents: true,
 			slidesPerView: 4,
-			// slidesPerView: 'auto', // Чтобы слайдер сам не указывал ширину слайдам. Будем управлять в стилях.
 			spaceBetween: 12,
-			autoHeight: true,
 			speed: 1000,
-			// parallax: true,
-			//touchRatio: 0,
-			//simulateTouch: false,
-			//loop: true,
-			//preloadImages: false,
-			//lazy: true,
-			// Dotts
-			//pagination: {
-			//	el: '.slider-quality__pagging',
-			//	clickable: true,
-			//},
-			// Arrows
 			navigation: {
 				nextEl: '.comparison__arrow-prev',
 				prevEl: '.comparison__arrow-next',
 			},
-			/*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
 			on: {
-
+				slideChange() {
+					// Получаем индекс активного слайда в comparisonSlider
+					const activeIndex = this.activeIndex;
+	
+					// Перемещаем все itemEquipmentSliders на тот же индекс
+					itemEquipmentSliders.forEach(slider => {
+						if (slider.swiper) {
+							slider.swiper.slideTo(activeIndex);
+						}
+					});
+				}
 			}
 		});
+	
+		// Инициализируем каждый из item-equipment__slider
+		itemEquipmentSliders.forEach(slider => {
+			new Swiper(slider, {
+				modules: [Navigation, Pagination],
+				slidesPerView: 4,
+				spaceBetween: 12,
+				speed: 1000,
+				allowTouchMove: false,
+			});
+		});
 	}
+
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
