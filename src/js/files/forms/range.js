@@ -61,3 +61,32 @@ function formatNumber(num) {
 }
 
 rangeInit();
+
+// Функция для инициализации кнопок
+function initQuantityButtons() {
+  const minusButton = document.querySelector('.quantity__button_minus');
+  const plusButton = document.querySelector('.quantity__button_plus');
+  const priceSlider2 = document.getElementById('slider-2');
+
+  // Получаем текущее значение ползунка
+  let currentValue = 6; // Начальное значение, соответствующее вашему коду
+
+  // Обработчик для кнопки уменьшения
+  minusButton.addEventListener('click', function () {
+    if (currentValue > 6) { // Проверяем, чтобы не было меньше минимального значения
+      currentValue -= 1; // Уменьшаем значение на один шаг
+      priceSlider2.noUiSlider.set(currentValue); // Устанавливаем новое значение ползунка
+    }
+  });
+
+  // Обработчик для кнопки увеличения
+  plusButton.addEventListener('click', function () {
+    if (currentValue < 96) { // Проверяем, чтобы не было больше максимального значения
+      currentValue += 1; // Увеличиваем значение на один шаг
+      priceSlider2.noUiSlider.set(currentValue); // Устанавливаем новое значение ползунка
+    }
+  });
+}
+
+// Вызов функции инициализации кнопок после инициализации ползунков
+initQuantityButtons();

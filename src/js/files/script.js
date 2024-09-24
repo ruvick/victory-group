@@ -78,3 +78,34 @@ toggleInputs.forEach(toggle => {
 updateBenefitPrice();
 updateStartPrice();
 updateSaleBlock();
+//========================================================================================================================================================
+
+const totalAmountElement = document.getElementById('total-amount');
+const resultProductStart = document.querySelector('.result-product__start');
+
+// Функция для обновления суммы в total-amount
+function updateTotalAmount(newValue) {
+		// Здесь вы можете добавить логику для преобразования newValue в нужный формат
+		totalAmountElement.textContent = `${newValue}`;
+}
+
+// Создаем экземпляр MutationObserver
+const observer = new MutationObserver((mutationsList) => {
+		for (const mutation of mutationsList) {
+				if (mutation.type === 'childList' || mutation.type === 'characterData') {
+						// Получаем новое значение из result-product__start
+						const newValue = resultProductStart.textContent.trim();
+						updateTotalAmount(newValue);
+				}
+		}
+});
+
+// Настройки для наблюдателя
+const config = { childList: true, characterData: true, subtree: true };
+
+// Начинаем наблюдение за элементом
+observer.observe(resultProductStart, config);
+
+// Инициализация: обновляем значение сразу при загрузке страницы
+updateTotalAmount(resultProductStart.textContent.trim());
+//========================================================================================================================================================
