@@ -1,5 +1,15 @@
 //<INPUT>
 // Снипет (HTML): inp
+input[type=radio] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],

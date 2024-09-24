@@ -13,7 +13,7 @@
 	}
 }
 
-.main-product {
+.main-product { 
 		display: grid; 
 		grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr)); 
 		// align-items: start;
@@ -23,8 +23,14 @@
 
 	&__info {
 	}
+	&__control {
+	}
 }
+
 .slider-product {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 	border-radius: rem(16);
 	overflow: hidden;
 	&__wrapper {
@@ -169,6 +175,60 @@
 		color: $mainColor;
 	}
 }
+
+.control-product {
+	display: flex;
+	align-items: center;
+	gap: rem(10);
+	padding: rem(12) rem(16);
+	border: rem(1) solid #DCE1E9;
+	background-color: #F3F6FB;
+	border-radius: rem(16);
+	overflow: hidden;
+} 
+
+
+.control-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: $mainTransition;
+}
+.control-btn__check {
+	position: relative;
+	flex: 0 0 rem(24);
+	width: rem(24);
+	height: rem(24);
+	background-color: grey;
+	border-radius: 50%;
+	overflow: hidden;
+	transition: $mainTransition;
+}
+.control-btn input[type=radio]:checked+.control-btn__check {
+	transform: scale(1.33);
+}
+
+._check-grey {
+	background-color: #e0e0e0;
+}
+._check-black {
+	background-color: #000;
+}
+._check-white {
+	background-color: #fff;
+}
+._check-lightGray {
+	background-color: #AAC5F0;
+}
+._check-red {
+	background-color: #C31313;
+}
+//========================================================================================================================================================
+
+
+
+
 
 .actions-product {
 
