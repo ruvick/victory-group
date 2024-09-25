@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240925085732">
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__wrapper">
+
+				<div class="header__top top-header">
+					<div class="top-header__container">
+						<div class="top-header__inner">
+							<a href="contacts.html" class="top-header__item">
+								<svg>
+									<use xlink:href="img/sprite.svg#location"></use>
+								</svg>
+								Новосибирск, ул. Дунаевского, 25/1
+							</a>
+							<div class="top-header__item">
+								<svg>
+									<use xlink:href="img/sprite.svg#clock"></use>
+								</svg>
+								Ежедневно с 9:00 до 20:00
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="header__main main-header">
+					<div class="main-header__container">
+
+						<div class="main-header__inner">
+
+							<button type="button" class="icon-menu">
+								<span></span>
+								<span></span>
+								<span></span>
+							</button>
+
+							<div class="main-header__logo logo">
+								<a href="index.html" class="logo__link">
+									<img src="img/icons/logo.svg?_v=1727243852163" alt="logo">
+								</a>
+							</div>
+
+							<ul class="main-header__menu menu">
+								<li class="menu__item">
+									<a href="index.html" class="menu__link">Главная</a>
+								</li>
+								<li class="menu__item">
+									<a href="catalog.html" class="menu__link">Каталог</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Автокредит</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Trade-in</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Выкуп</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Акции</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Контакты</a>
+								</li>
+							</ul>
+
+							<div class="main-header__actions actions-header">
+								<div class="actions-header__search-form search-form">
+									<form action="#" class="search-form__item">
+										<!-- <button id="searchMobClose" type="reset" class="search-form__btn search-form__btn_mob-reset _icon-arrow-sl-left"></button>
+								<button id="searchClose" type="reset" class="search-form__btn search-form__btn_reset _icon-close"></button> -->
+										<button type="submit" class="search-form__btn">
+											<svg>
+												<use xlink:href="img/sprite.svg#search"></use>
+											</svg>
+										</button>
+										<input id="search" autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Поиск по марке" data-value="Поиск по марке" class="search-form__input" data-placeholder="Поиск по марке">
+									</form>
+								</div>
+								<button type="button" class="actions-header__btn btn">Связаться</button>
+							</div>
+
+							<a href="tel:8800000000" class="main-header__phone-mob">
+								<svg fill="none" viewBox="0 0 24 24" id="phone" xmlns="http://www.w3.org/2000/svg">
+									<path d="M14.0497 6C15.0264 6.19057 15.924 6.66826 16.6277 7.37194C17.3314 8.07561 17.8091 8.97326 17.9997 9.95M14.0497 2C16.0789 2.22544 17.9713 3.13417 19.4159 4.57701C20.8606 6.01984 21.7717 7.91101 21.9997 9.94M10.2266 13.8631C9.02506 12.6615 8.07627 11.3028 7.38028 9.85323C7.32041 9.72854 7.29048 9.66619 7.26748 9.5873C7.18576 9.30695 7.24446 8.96269 7.41447 8.72526C7.46231 8.65845 7.51947 8.60129 7.63378 8.48698C7.98338 8.13737 8.15819 7.96257 8.27247 7.78679C8.70347 7.1239 8.70347 6.26932 8.27247 5.60643C8.15819 5.43065 7.98338 5.25585 7.63378 4.90624L7.43891 4.71137C6.90747 4.17993 6.64174 3.91421 6.35636 3.76987C5.7888 3.4828 5.11854 3.4828 4.55098 3.76987C4.2656 3.91421 3.99987 4.17993 3.46843 4.71137L3.3108 4.86901C2.78117 5.39863 2.51636 5.66344 2.31411 6.02348C2.08969 6.42298 1.92833 7.04347 1.9297 7.5017C1.93092 7.91464 2.01103 8.19687 2.17124 8.76131C3.03221 11.7947 4.65668 14.6571 7.04466 17.045C9.43264 19.433 12.295 21.0575 15.3284 21.9185C15.8928 22.0787 16.1751 22.1588 16.588 22.16C17.0462 22.1614 17.6667 22 18.0662 21.7756C18.4263 21.5733 18.6911 21.3085 19.2207 20.7789L19.3783 20.6213C19.9098 20.0898 20.1755 19.8241 20.3198 19.5387C20.6069 18.9712 20.6069 18.3009 20.3198 17.7333C20.1755 17.448 19.9098 17.1822 19.3783 16.6508L19.1835 16.4559C18.8339 16.1063 18.6591 15.9315 18.4833 15.8172C17.8204 15.3862 16.9658 15.3862 16.3029 15.8172C16.1271 15.9315 15.9523 16.1063 15.6027 16.4559C15.4884 16.5702 15.4313 16.6274 15.3644 16.6752C15.127 16.8453 14.7828 16.904 14.5024 16.8222C14.4235 16.7992 14.3612 16.7693 14.2365 16.7094C12.7869 16.0134 11.4282 15.0646 10.2266 13.8631Z" stroke="#2E58DB" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</a>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</header>
+		<main class="page page_home">
+
+			<section class="page__about about">
+				<div class="_container">
+
+					<div class="about__title _title">
+						ghghg
+					</div>
+
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+	</div>
+	<!-- 
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+			</div>
+		</div>
+	</div>
+</div>
+ -->
+
+	<script src="js/app.min.js?_v=20240925085732"></script>
+</body>
+
+</html>
