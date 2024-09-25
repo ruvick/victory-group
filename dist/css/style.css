@@ -899,6 +899,7 @@ input::-webkit-inner-spin-button {
 
 .spollers__item {
   font-size: 1.25rem;
+  width: 100%;
 }
 .spollers__item:not(:last-child) {
   margin-bottom: 1.5em;
@@ -2093,6 +2094,11 @@ input[type=checkbox]:checked + .switch-block__label {
 .comparison__title:not(:last-child) {
   margin-bottom: 1.6666666667em;
 }
+@media (max-width: 83.125em) {
+  .comparison__title {
+    padding: 0 0.625rem;
+  }
+}
 .comparison__inner {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
@@ -2261,6 +2267,12 @@ input[type=checkbox]:checked + .switch-block__label {
   padding: 1.25rem;
   border-radius: 0;
   border: none;
+}
+@media (max-width: 83.125em) {
+  .equipment .spollers__body {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .calculation__title {
@@ -2556,12 +2568,6 @@ input[type=checkbox]:checked + .switch-block__label {
 }
 
 @media (max-width: 83.125em) {
-  .main-equipment__body {
-    margin: 0 0.8125rem;
-  }
-}
-
-@media (max-width: 83.125em) {
   .equipment .spollers__title {
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -2571,6 +2577,12 @@ input[type=checkbox]:checked + .switch-block__label {
 .item-equipment__name {
   padding-left: 0.625rem;
   padding-right: 0.625rem;
+}
+
+@media (max-width: 83.125em) {
+  .item-equipment__wrapper {
+    padding: 0 0.625rem;
+  }
 }
 
 @media (min-width: 85.125em) {

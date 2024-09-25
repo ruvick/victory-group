@@ -380,6 +380,9 @@
 		&:not(:last-child){
 			margin-bottom: em(60, 36);
 		}
+		@media (max-width: em(1330)){
+			  padding: 0 rem(10);
+		}
 	}
 
 	&__inner {
@@ -547,6 +550,10 @@
     padding: 1.25rem;
     border-radius: 0;
     border: none;
+	 @media (max-width: em(1330)){
+		padding-left: 0;
+		padding-right: 0;
+	 }
 	}
 }
 //========================================================================================================================================================
@@ -852,11 +859,11 @@
 		  padding: 0;
 	}
 }
-.main-equipment__body {
-	@media (max-width: em(1330)){
-		  margin: 0 rem(13);
-	}
-}
+// .main-equipment__body {
+// 	@media (max-width: em(1330)){
+// 		  margin: 0 rem(-13);
+// 	}
+// }
 .equipment .spollers__title {
 	@media (max-width: em(1330)){
 		  padding-left: rem(10);
@@ -867,6 +874,10 @@
 	padding-left: rem(10);
 	padding-right: rem(10);
 }
-
+.item-equipment__wrapper {
+	@media (max-width: em(1330)){
+		padding: 0 rem(10);
+	}
+}
 
 

@@ -10,6 +10,7 @@
 // Спойлер
 .spollers__item {
 	font-size: rem(20);
+	width: 100%;
 	&:not(:last-child) {
 		margin-bottom: em(30, 20);
 	}

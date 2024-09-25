@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation,Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -54,15 +54,15 @@ function initSliders() {
 			autoHeight: true,
 			speed: 1000,
 			on: {
-				slideChange: function() {
+				slideChange: function () {
 					// Обновляем состояние кнопок при смене слайда
 					updateRadioButtons(this.activeIndex);
 				}
 			}
 		});
-	
+
 		const radioButtons = document.querySelectorAll('.control-btn__input');
-	
+
 		// Обработчик клика на кнопки
 		radioButtons.forEach((button, index) => {
 			button.addEventListener('change', () => {
@@ -71,7 +71,7 @@ function initSliders() {
 				}
 			});
 		});
-	
+
 		// Функция для обновления состояния кнопок
 		function updateRadioButtons(activeIndex) {
 			radioButtons.forEach((button, index) => {
@@ -82,7 +82,7 @@ function initSliders() {
 
 	const comparisonSlider = document.querySelector('.comparison__slider');
 	const itemEquipmentSliders = document.querySelectorAll('.item-equipment__slider');
-	
+
 	if (comparisonSlider) {
 		const swiperComparison = new Swiper(comparisonSlider, {
 			modules: [Navigation, Pagination],
@@ -115,7 +115,7 @@ function initSliders() {
 				slideChange() {
 					// Получаем индекс активного слайда в comparisonSlider
 					const activeIndex = this.activeIndex;
-	
+
 					// Перемещаем все itemEquipmentSliders на тот же индекс
 					itemEquipmentSliders.forEach(slider => {
 						if (slider.swiper) {
@@ -125,7 +125,7 @@ function initSliders() {
 				}
 			}
 		});
-	
+
 		// Инициализируем каждый из item-equipment__slider
 		itemEquipmentSliders.forEach(slider => {
 			new Swiper(slider, {
@@ -194,5 +194,5 @@ window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
 	// Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
-	//initSlidersScroll();
+	initSlidersScroll();
 });
