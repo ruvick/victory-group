@@ -86,12 +86,30 @@ function initSliders() {
 	if (comparisonSlider) {
 		const swiperComparison = new Swiper(comparisonSlider, {
 			modules: [Navigation, Pagination],
-			slidesPerView: 4,
-			spaceBetween: 12,
+			slidesPerView: 1.3,
+			spaceBetween: 8,
 			speed: 1000,
 			navigation: {
 				nextEl: '.comparison__arrow-prev',
 				prevEl: '.comparison__arrow-next',
+			},
+			breakpoints: {
+				375: {
+					slidesPerView: 1.6,
+				},
+				768: {
+					slidesPerView: 2.3,
+				},
+				1024: {
+					slidesPerView: 2.8,
+				},
+				1200: {
+					slidesPerView: 3.3,
+				},
+				1330: {
+					slidesPerView: 4,
+					spaceBetween: 12,
+				},
 			},
 			on: {
 				slideChange() {
@@ -112,10 +130,28 @@ function initSliders() {
 		itemEquipmentSliders.forEach(slider => {
 			new Swiper(slider, {
 				modules: [Navigation, Pagination],
-				slidesPerView: 4,
-				spaceBetween: 12,
+				slidesPerView: 1.3,
+				spaceBetween: 8,
 				speed: 1000,
 				allowTouchMove: false,
+				breakpoints: {
+					375: {
+						slidesPerView: 1.6,
+					},
+					768: {
+						slidesPerView: 2.3,
+					},
+					1024: {
+						slidesPerView: 2.8,
+					},
+					1200: {
+						slidesPerView: 3.3,
+					},
+					1330: {
+						slidesPerView: 4,
+						spaceBetween: 12,
+					},
+				},
 			});
 		});
 	}

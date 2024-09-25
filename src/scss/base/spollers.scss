@@ -3,8 +3,9 @@
 
 // Блок со спойлерами
 .spollers {
-	display: grid;
-	gap: 15px;
+	// display: grid;
+	display: flex;
+	gap: rem(15);
 }
 // Спойлер
 .spollers__item {

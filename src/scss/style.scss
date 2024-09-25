@@ -75,6 +75,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	@media (max-width: em(768)){
+		  padding-bottom: rem(30);
+	}
 	// Сайт загружен
 	.loaded & {
 	}

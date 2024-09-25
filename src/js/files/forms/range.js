@@ -10,36 +10,36 @@ export function rangeInit() {
 
   if (priceSlider1) {
     noUiSlider.create(priceSlider1, {
-      start: [4000000], // Начальное значение для первоначального взноса
+      start: [4000000], 
       connect: [true, false],
       range: {
         'min': [0],
-        'max': [9000000] // Максимальное значение для первоначального взноса
+        'max': [9000000] 
       },
-      step: 100000 // Шаг
+      step: 100000 
     });
 
     priceSlider1.noUiSlider.on('update', function (values) {
-      priceInput1.value = formatNumber(Math.round(values[0])); // Обновляем инпут с форматированием
+      priceInput1.value = formatNumber(Math.round(values[0])); 
     });
 
     priceInput1.addEventListener('change', function () {
-      const value = parseFloat(priceInput1.value.replace(/\s+/g, '')); // Убираем пробелы
+      const value = parseFloat(priceInput1.value.replace(/\s+/g, '')); 
       if (!isNaN(value)) {
-        priceSlider1.noUiSlider.set(value); // Устанавливаем значение ползунка
+        priceSlider1.noUiSlider.set(value); 
       }
     });
   }
 
   if (priceSlider2) {
     noUiSlider.create(priceSlider2, {
-      start: [6], // Начальное значение для срока кредита
+      start: [6], 
       connect: [true, false],
       range: {
         'min': [6],
-        'max': [96] // Максимальное значение в месяцах (8 лет)
+        'max': [96] 
       },
-      step: 1 // Шаг в месяцах
+      step: 1 
     });
 
     priceSlider2.noUiSlider.on('update', function (values) {
@@ -69,24 +69,23 @@ function initQuantityButtons() {
   const priceSlider2 = document.getElementById('slider-2');
 
   // Получаем текущее значение ползунка
-  let currentValue = 6; // Начальное значение, соответствующее вашему коду
+  let currentValue = 6; 
 
   // Обработчик для кнопки уменьшения
   minusButton.addEventListener('click', function () {
-    if (currentValue > 6) { // Проверяем, чтобы не было меньше минимального значения
-      currentValue -= 1; // Уменьшаем значение на один шаг
-      priceSlider2.noUiSlider.set(currentValue); // Устанавливаем новое значение ползунка
+    if (currentValue > 6) { 
+      currentValue -= 1; 
+      priceSlider2.noUiSlider.set(currentValue); 
     }
   });
 
   // Обработчик для кнопки увеличения
   plusButton.addEventListener('click', function () {
-    if (currentValue < 96) { // Проверяем, чтобы не было больше максимального значения
-      currentValue += 1; // Увеличиваем значение на один шаг
-      priceSlider2.noUiSlider.set(currentValue); // Устанавливаем новое значение ползунка
+    if (currentValue < 96) { 
+      currentValue += 1; 
+      priceSlider2.noUiSlider.set(currentValue);
     }
   });
 }
 
-// Вызов функции инициализации кнопок после инициализации ползунков
 initQuantityButtons();
